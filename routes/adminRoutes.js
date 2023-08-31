@@ -1,9 +1,13 @@
-var express = require("express");
-var router = express.Router();
+const express = require('express'),
+router = express.Router();
 
 
-router.get("/signin", (req, res) => {
-  res.render("admin/signin");
-});
-//router ile export etme
+const pageController = require('../controllers/pageController')
+
+
+router.get("/signin",pageController.getSigninPage);
+
+router.get("/signup",pageController.getSignupPage);
+
+
 module.exports = router;
